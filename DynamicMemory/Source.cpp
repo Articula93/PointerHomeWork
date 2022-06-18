@@ -24,7 +24,7 @@ void main()
 
 	int n = 0;
 	cout << "введите количество элементов массива: "; cin >> n;
-	int* arr = new int[n];
+	char* arr = new char[n];
 	FillRand(arr, n);
 	cout << "Наш массив: " << endl;
 	Print(arr, n);
@@ -81,7 +81,7 @@ void Print(T arr[], const int n)
 template<typename T>
 T* push_back(T arr[], int& n, int value)
 {
-	T* buffer = new int[n + 1];
+	T* buffer = new T[n + 1];
 	for (int i = 0; i < n; i++)
 	{
 		buffer[i] = arr[i];
@@ -96,7 +96,7 @@ T* push_back(T arr[], int& n, int value)
 template<typename T>
 T* pop_front(T arr[], int& n, int value)
 {
-	T* buffer = new int[n + 1];
+	T* buffer = new T[n + 1];
 	buffer[0] = value;
 	for (int i = 0; i < n; i++)
 	{
@@ -112,7 +112,7 @@ T* pop_front(T arr[], int& n, int value)
 template<typename T>
 T* insert(T arr[], int& n, int value, int& index)
 {
-	T* buffer = new int[n + 1];
+	T* buffer = new T[n + 1];
 	for (int i = 0; i < index; i++)
 	{
 		buffer[i] = arr[i];
@@ -133,7 +133,7 @@ T* insert(T arr[], int& n, int value, int& index)
 template<typename T>
 T* pop_back(T arr[], int& n)
 {
-	T* buffer = new int[n - 1];
+	T* buffer = new T[n - 1];
 	for (int i = 0; i < n; i++)
 	{
 		buffer[i - 1] = arr[i];
@@ -146,7 +146,7 @@ T* pop_back(T arr[], int& n)
 template<typename T>
 T* pop_front(T arr[], int& n)
 {
-	T* buffer = new int[n - 1];
+	T* buffer = new T[n - 1];
 	for (int i = 0; i < n - 1; i++)
 	{
 		buffer[i] = arr[i + 1];
@@ -160,7 +160,7 @@ T* pop_front(T arr[], int& n)
 template<typename T>
 T* erase(T arr[], int& n, int& index)
 {
-	T* buffer = new int[n + 1];
+	T* buffer = new T[n + 1];
 	for (int i = 0; i < index; i++)
 	{
 		buffer[i] = arr[i];
