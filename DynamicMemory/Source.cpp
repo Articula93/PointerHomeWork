@@ -1,85 +1,75 @@
-#include<iostream>
+ï»¿#include<iostream>
 using namespace std;
 
-template<typename T>
-void FillRand(T arr[], const int n);
-template<typename T>
-void Print(T arr[], const int n);
-template<typename T>
-T* push_back(T arr[], int& n, int value);
-template<typename T>
-T* pop_front(T arr[], int& n, int value);
-template<typename T>
-T* insert(T arr[], int& n, int value, int& index);
-template<typename T>
-T* pop_back(T arr[], int& n);
-template<typename T>
-T* pop_front(T arr[], int& n); 
-template<typename T>
-T* erase(T arr[], int& n, int& index);
+template<typename T>void FillRand(T arr[], const int n);
+template<typename T>void Print(T arr[], const int n);
+template<typename T>T* push_back(T arr[], int& n, int value);
+template<typename T>T* pop_front(T arr[], int& n, int value);
+template<typename T>T* insert(T arr[], int& n, int value, int& index);
+template<typename T>T* pop_back(T arr[], int& n);
+template<typename T>T* pop_front(T arr[], int& n); 
+template<typename T>T* erase(T arr[], int& n, int& index);
 
 void main()
 {
 	setlocale(LC_ALL, "Russian");
 
 	int n = 0;
-	cout << "ââåäèòå êîëè÷åñòâî ýëåìåíòîâ ìàññèâà: "; cin >> n;
+	cout << "Ð²Ð²ÐµÐ´Ð¸Ñ‚Ðµ ÐºÐ¾Ð»Ð¸Ñ‡ÐµÑÑ‚Ð²Ð¾ ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚Ð¾Ð² Ð¼Ð°ÑÑÐ¸Ð²Ð°: "; cin >> n;
 	char* arr = new char[n];
 	FillRand(arr, n);
-	cout << "Íàø ìàññèâ: " << endl;
+	cout << "ÐÐ°Ñˆ Ð¼Ð°ÑÑÐ¸Ð²: " << endl;
 	Print(arr, n);
 	cout << endl;
 	int value = 0;
-	cout << "Ââåäèòå äîáàâî÷íîå çíà÷åíèå: "; cin >> value;
+	cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð´Ð¾Ð±Ð°Ð²Ð¾Ñ‡Ð½Ð¾Ðµ Ð·Ð½Ð°Ñ‡ÐµÐ½Ð¸Ðµ: "; cin >> value;
 	cout << endl;
-	cout << "Íàø ìàññèâ ñ äîáàâëåíèåì ýëåìåíòà â êîíåö: " << endl;
+	cout << "ÐÐ°Ñˆ Ð¼Ð°ÑÑÐ¸Ð² Ñ Ð´Ð¾Ð±Ð°Ð²Ð»ÐµÐ½Ð¸ÐµÐ¼ ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚Ð° Ð² ÐºÐ¾Ð½ÐµÑ†: " << endl;
 	arr = push_back(arr, n, value);
 	Print(arr, n);
 	cout << endl;
-	cout << "Ââåäèòå äîáàâî÷íîå çíà÷åíèå: "; cin >> value;
-	cout << "Íàø ìàññèâ ñ äîáàâëåíèåì ýëåìåíòà â íà÷àëî: " << endl;
+	cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð´Ð¾Ð±Ð°Ð²Ð¾Ñ‡Ð½Ð¾Ðµ Ð·Ð½Ð°Ñ‡ÐµÐ½Ð¸Ðµ: "; cin >> value;
+	cout << "ÐÐ°Ñˆ Ð¼Ð°ÑÑÐ¸Ð² Ñ Ð´Ð¾Ð±Ð°Ð²Ð»ÐµÐ½Ð¸ÐµÐ¼ ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚Ð° Ð² Ð½Ð°Ñ‡Ð°Ð»Ð¾: " << endl;
 	arr = pop_front(arr, n, value);
 	Print(arr, n);
 	cout << endl;
 	int index = 0;
-	cout << "Ââåäèòå íîìåð èíäåêñà ïî êîòîðîìó áóäåò äîáàâëåí ýëåìåíò â ìàññèâ: "; cin >> index;
-	cout << "Ââåäèòå äîáàâî÷íîå çíà÷åíèå: "; cin >> value;
-	cout << "Íàø ìàññèâ ñ äîáàâëåíèåì ýëåìåíòà ïî èíäåêñó: " << endl;
+	cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð½Ð¾Ð¼ÐµÑ€ Ð¸Ð½Ð´ÐµÐºÑÐ° Ð¿Ð¾ ÐºÐ¾Ñ‚Ð¾Ñ€Ð¾Ð¼Ñƒ Ð±ÑƒÐ´ÐµÑ‚ Ð´Ð¾Ð±Ð°Ð²Ð»ÐµÐ½ ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚ Ð² Ð¼Ð°ÑÑÐ¸Ð²: "; cin >> index;
+	cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð´Ð¾Ð±Ð°Ð²Ð¾Ñ‡Ð½Ð¾Ðµ Ð·Ð½Ð°Ñ‡ÐµÐ½Ð¸Ðµ: "; cin >> value;
+	cout << "ÐÐ°Ñˆ Ð¼Ð°ÑÑÐ¸Ð² Ñ Ð´Ð¾Ð±Ð°Ð²Ð»ÐµÐ½Ð¸ÐµÐ¼ ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚Ð° Ð¿Ð¾ Ð¸Ð½Ð´ÐµÐºÑÑƒ: " << endl;
 	arr = insert(arr, n, value, index);
 	Print(arr, n);
 	cout << endl;
-	cout << "Íàø ìàññèâ ñ óäàëåíèåì ïîñëåäíåãî ýëåìåíòà: " << endl;
+	cout << "ÐÐ°Ñˆ Ð¼Ð°ÑÑÐ¸Ð² Ñ ÑƒÐ´Ð°Ð»ÐµÐ½Ð¸ÐµÐ¼ Ð¿Ð¾ÑÐ»ÐµÐ´Ð½ÐµÐ³Ð¾ ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚Ð°: " << endl;
 	arr = pop_back(arr, n);
 	Print(arr, n);
 	cout << endl;
-	cout << "Íàø ìàññèâ ñ óäàëåíèåì ïåðâîãî ýëåìåíòà: " << endl;
+	cout << "ÐÐ°Ñˆ Ð¼Ð°ÑÑÐ¸Ð² Ñ ÑƒÐ´Ð°Ð»ÐµÐ½Ð¸ÐµÐ¼ Ð¿ÐµÑ€Ð²Ð¾Ð³Ð¾ ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚Ð°: " << endl;
 	arr = pop_front(arr, n);
 	Print(arr, n);
 	cout << endl;
-	cout << "Ââåäèòå èíäåêñ ïî êîòîðîìó óäàëèòñÿ ýëåìåíò ìàññèâà:"; cin >> index;
-	cout << "Íàø ìàññèâ ñ óäàëåíèåì ýëåìåíòà ïî èíäåêñó: " << endl;
+	cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð¸Ð½Ð´ÐµÐºÑ Ð¿Ð¾ ÐºÐ¾Ñ‚Ð¾Ñ€Ð¾Ð¼Ñƒ ÑƒÐ´Ð°Ð»Ð¸Ñ‚ÑÑ ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚ Ð¼Ð°ÑÑÐ¸Ð²Ð°:"; cin >> index;
+	cout << "ÐÐ°Ñˆ Ð¼Ð°ÑÑÐ¸Ð² Ñ ÑƒÐ´Ð°Ð»ÐµÐ½Ð¸ÐµÐ¼ ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚Ð° Ð¿Ð¾ Ð¸Ð½Ð´ÐµÐºÑÑƒ: " << endl;
 	arr = erase(arr, n, index);
 	Print(arr, n);
 
 
 	delete[] arr;
 }
-template<typename T>
-void FillRand(T arr[], const int n)
+
+template<typename T>void FillRand(T arr[], const int n)
 {
 	for (int i = 0; i < n; i++)
 		arr[i] = rand() % 100;
 }
-template<typename T>
-void Print(T arr[], const int n)
+template<typename T>void Print(T arr[], const int n)
 {
 	for (int i = 0; i < n; i++)
 
 		cout << arr[i] << "\t";
 
 }
-template<typename T>
-T* push_back(T arr[], int& n, int value)
+template<typename T>T* push_back(T arr[], int& n, int value)
 {
 	T* buffer = new T[n + 1];
 	for (int i = 0; i < n; i++)
@@ -93,8 +83,7 @@ T* push_back(T arr[], int& n, int value)
 	n++;
 	return arr;
 }
-template<typename T>
-T* pop_front(T arr[], int& n, int value)
+template<typename T>T* pop_front(T arr[], int& n, int value)
 {
 	T* buffer = new T[n + 1];
 	buffer[0] = value;
@@ -109,8 +98,7 @@ T* pop_front(T arr[], int& n, int value)
 	delete[] arr;
 
 }
-template<typename T>
-T* insert(T arr[], int& n, int value, int& index)
+template<typename T>T* insert(T arr[], int& n, int value, int& index)
 {
 	T* buffer = new T[n + 1];
 	for (int i = 0; i < index; i++)
@@ -130,8 +118,7 @@ T* insert(T arr[], int& n, int value, int& index)
 	delete[] arr;
 
 }
-template<typename T>
-T* pop_back(T arr[], int& n)
+template<typename T>T* pop_back(T arr[], int& n)
 {
 	T* buffer = new T[n - 1];
 	for (int i = 0; i < n; i++)
@@ -143,8 +130,7 @@ T* pop_back(T arr[], int& n)
 	return arr;
 	delete[] arr;
 }
-template<typename T>
-T* pop_front(T arr[], int& n)
+template<typename T>T* pop_front(T arr[], int& n)
 {
 	T* buffer = new T[n - 1];
 	for (int i = 0; i < n - 1; i++)
@@ -157,8 +143,7 @@ T* pop_front(T arr[], int& n)
 	return arr;
 	delete[] arr;
 }
-template<typename T>
-T* erase(T arr[], int& n, int& index)
+template<typename T>T* erase(T arr[], int& n, int& index)
 {
 	T* buffer = new T[n + 1];
 	for (int i = 0; i < index; i++)
